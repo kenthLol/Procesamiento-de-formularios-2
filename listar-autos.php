@@ -12,7 +12,7 @@
 
 <body>
     <div class="container ">
-        <h2 class="my-3">Listado de Alumnos</h2>
+        <h2 class="my-3">Listado de Autos</h2>
         <div class="row">
             <div class="col-12  my-3">
                 <div class="row border-top py-2">

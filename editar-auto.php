@@ -49,7 +49,7 @@
             <div class="card-body">
                 <div class="container">
                     <h1>Autos</h1>
-                    <p>Actualice los datos del estudiante: </p>
+                    <p>Actualice los datos del auto: </p>
                     <form action="actualizar-auto.php?id=<?php echo $auto->id; ?>" method="POST"
                         ENCTYPE="multipart/form-data">
                         <div class="form-group col-12 col-md-6" style="display: none;">
@@ -58,14 +58,23 @@
                                 value="<?php echo $auto->id; ?>" required>
                         </div>
                         <div class="form-group col-12 col-md-6">
-                            <label for="email">Correo electrónico:</label>
-                            <input type="email" class="form-control" id="email" name="correo"
+                            <label for="placa">Placa del vehículo:</label>
+                            <input type="text" class="form-control" id="placa" name="placa"
                                 value="<?php echo $auto->placa; ?>" required>
                         </div>
                         <div class="form-group col-12 col-md-6">
-                            <label for="nombre">Nombre completo:</label>
-                            <input type="text" class="form-control" id="nombre" name="nombre" maxlength="200"
+                            <label for="modelo">Modelo del vehículo:</label>
+                            <input type="text" class="form-control" id="modelo" name="modelo" maxlength="200"
                                 value="<?php echo $auto->modelo; ?>" required>
+                        </div>
+                        <div class="form-group col-12 col-md-6">
+                            <label for="marca">Marca:</label>
+                            <input type="text" class="form-control" id="marca" name="marca" maxlength="10"
+                            value="<?php echo $auto->marca; ?>" required>
+                        </div>
+                        <div class="form-group col-12 col-md-6">
+                            <label for="descripcion">Descripción:</label>
+                            <textarea class="form-control" id="descripcion" rows="3" value="<?php echo $auto->descripcion; ?>" required></textarea>
                         </div>
                         <div style="padding-left: 15px;">
                             <button type="submit" class="btn btn-primary">Actualizar</button>

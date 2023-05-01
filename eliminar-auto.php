@@ -19,6 +19,6 @@ if ($resultado)
 else
     echo "<p>Error al actualizar los datos</p>";
 
-echo '    <a href="listar.php" class="btn btn-secondary">Regresar al listado.</a>';
+echo '    <a href="listar-autos.php" class="btn btn-secondary">Regresar al listado.</a>';
 echo '</div>';
 ?>
