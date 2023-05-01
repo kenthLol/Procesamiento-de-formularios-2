@@ -7,22 +7,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
-    <title>Listar</title>
+    <title>Listar autos</title>
 </head>
 
 <body>
     <?php
     // Incluir la clase Alumno y procesar
-    include "alumno.php";
+    include "auto.php";
 
     // Obtener los datos del alumno desde el formulario
-    $correo = $_POST['email'];
-    $nombre = $_POST['nombre'];
-    $carnet = $_POST['carnet'];
-    $edad = $_POST['edad'];
-    $curso = $_POST['curso'];
-    // $foto = $_FILES['foto'];
+    // $placa = $_POST['placa'];
+    // $modelo = $_POST['modelo'];
+    // $marca = $_POST['marca'];
+    // $descripcion = $_POST['descripcion'];
     
+    $placa = "ABC-123";
+    $modelo = "Sedan";
+    $marca = "Toyota";
+    $descripcion = "Auto en buen estado, con aire acondicionado y reproductor de música.";
+
     $db = new mysqli("localhost", "root", "", "bdprueba");
 
     if ($db->connect_errno) {
@@ -30,7 +33,7 @@
         exit();
     }
 
-    $stmt = "insert into alumnos(correo, nombre, carnet, edad, curso) value ('$correo', '$nombre', '$carnet', $edad, $curso)";
+    $stmt = "insert into autos(placa, modelo, marca, descripcion) value ('$placa', '$modelo', '$marca', '$descripcion')";
 
     $resultado = $db->query($stmt);
 
