@@ -20,7 +20,7 @@
                     <div class="col-8"><strong>Información</strong></div>
                 </div>
                 <?php
-                include "alumno.php";
+                include "auto.php";
 
                 $db = new mysqli("localhost", "root", "", "bdprueba");
 
@@ -29,53 +29,43 @@
                     exit();
                 }
 
-                $stmt = "select * from alumnos";
+                $stmt = "select * from autos";
                 $result = $db->query($stmt);
 
-                $alumnos = array();
+                $autos = array();
 
                 for ($i = 0; $i < mysqli_num_rows($result); $i++) {
-                    $array_alumno = $result->fetch_assoc();
-                    $alumnos[$i] = new Alumno(
-                        $array_alumno['id'],
-                        $array_alumno['correo'],
-                        $array_alumno['nombre'],
-                        $array_alumno['carnet'],
-                        $array_alumno['edad'],
-                        $array_alumno['curso'],
-                        null
+                    $auto_array = $result->fetch_assoc();
+                    $autos[$i] = new Auto(
+                        $auto_array['id'],
+                        $auto_array['placa'],
+                        $auto_array['modelo'],
+                        $auto_array['marca'],
+                        $auto_array['descripcion'],
                     );
                 }
 
-                foreach ($alumnos as $alumno) {
+                foreach ($autos as $auto) {
                     ?>
                     <div class="row border-top py-3">
-                        <div class="col-4">
-                            <img src="<?php echo $alumno->foto['full_path']; ?>"
-                                class="img-fluid img-thumbnail d-flex custom-img mx-auto my-2 custom-img"
-                                style="width: 120px; height: 120px" alt="Foto de <?php echo $alumno->nombre; ?>">
-                        </div>
                         <div class="col-8">
                             <ul class="list-unstyled">
-                                <li><strong>No. de carnet:</strong>
-                                    <?php echo $alumno->carnet; ?>
+                                <li><strong>Placa:</strong>
+                                    <?php echo $auto->placa; ?>
                                 </li>
-                                <li><strong>Nombre:</strong>
-                                    <?php echo $alumno->nombre; ?>
+                                <li><strong>Modelo:</strong>
+                                    <?php echo $auto->modelo; ?>
                                 </li>
-                                <li><strong>Correo electrónico:</strong>
-                                    <?php echo $alumno->correo; ?>
+                                <li><strong>Marca:</strong>
+                                    <?php echo $auto->marca; ?>
                                 </li>
-                                <li><strong>Edad:</strong>
-                                    <?php echo $alumno->edad; ?>
-                                </li>
-                                <li><strong>Curso actual:</strong>
-                                    <?php echo $alumno->curso; ?>
+                                <li><strong>Descripcion:</strong>
+                                    <?php echo $auto->descripcion; ?>
                                 </li>
                             </ul>
                             <div class="btn-group">
-                                <a href="editar.php?id=<?php echo $alumno->id ?>" class=" btn btn-primary">Editar</a>
-                                <a href="eliminar.php?id=<?php echo $alumno->id ?>" class="btn btn-danger">Eliminar</a>
+                                <a href="editar-auto.php?id=<?php echo $auto->id ?>" class=" btn btn-primary">Editar</a>
+                                <a href="eliminar-auto.php?id=<?php echo $auto->id ?>" class="btn btn-danger">Eliminar</a>
                             </div>
                         </div>
                     </div>
