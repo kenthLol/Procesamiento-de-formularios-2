@@ -12,19 +12,14 @@
 
 <body>
     <?php
-    // Incluir la clase Alumno y procesar
+    // Incluir la clase auto y procesar
     include "auto.php";
 
-    // Obtener los datos del alumno desde el formulario
-    // $placa = $_POST['placa'];
-    // $modelo = $_POST['modelo'];
-    // $marca = $_POST['marca'];
-    // $descripcion = $_POST['descripcion'];
-    
-    $placa = "ABC-123";
-    $modelo = "Sedan";
-    $marca = "Toyota";
-    $descripcion = "Auto en buen estado, con aire acondicionado y reproductor de música.";
+    // Obtener los datos del auto desde el formulario
+    $placa = $_POST['placa'];
+    $modelo = $_POST['modelo'];
+    $marca = $_POST['marca'];
+    $descripcion = $_POST['descripcion'];
 
     $db = new mysqli("localhost", "root", "", "bdprueba");
 
