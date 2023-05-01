@@ -117,7 +117,8 @@
                                     </div>
                                     <div class="form-group col-12 col-md-6">
                                         <label for="descripcion">Descripción:</label>
-                                        <textarea class="form-control" id="descripcion" rows="3" required></textarea>
+                                        <textarea class="form-control" name="descripcion" id="descripcion" rows="3"
+                                            required></textarea>
                                     </div>
                                     <div style="padding-left: 15px;">
                                         <button type="submit" class="btn btn-primary">Enviar</button>
