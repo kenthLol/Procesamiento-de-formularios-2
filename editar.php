@@ -51,7 +51,8 @@
                 <div class="container">
                     <h1>Alumnos</h1>
                     <p>Actualice los datos del estudiante: </p>
-                    <form action="actualizar.php" method="POST" ENCTYPE="multipart/form-data">
+                    <form action="actualizar.php?id=<?php echo $alumno->id; ?>" method="POST"
+                        ENCTYPE="multipart/form-data">
                         <div class="form-group col-12 col-md-6" style="display: none;">
                             <label for="id">Id:</label>
                             <input type="number" class="form-control" id="id" name="id"
