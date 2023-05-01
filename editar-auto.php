@@ -74,7 +74,7 @@
                         </div>
                         <div class="form-group col-12 col-md-6">
                             <label for="descripcion">Descripción:</label>
-                            <textarea class="form-control" id="descripcion" name="descripcion" rows="3" value="<?php echo $auto->descripcion; ?>" required></textarea>
+                            <textarea class="form-control" id="descripcion" name="descripcion" rows="3" required><?php echo $auto->descripcion; ?></textarea>
                         </div>
                         <div style="padding-left: 15px;">
                             <button type="submit" class="btn btn-primary">Actualizar</button>

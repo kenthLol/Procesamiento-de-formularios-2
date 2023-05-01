@@ -16,7 +16,7 @@
         <div class="row">
             <div class="col-12  my-3">
                 <div class="row border-top py-2">
-                    <div class="col-4"><strong>Foto</strong></div>
+                    <!-- <div class="col-4"><strong>Foto</strong></div> -->
                     <div class="col-8"><strong>Información</strong></div>
                 </div>
                 <?php
