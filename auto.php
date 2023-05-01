@@ -7,7 +7,7 @@ class Auto
   public $marca;
   public $descripcion;
 
-  public function __construct($id, $placa, $modelo, $marca, $descripcion)
+  public function __construct($id = "", $placa = "", $modelo = "", $marca = "", $descripcion = "")
   {
     $this->id = $id;
     $this->placa = $placa;

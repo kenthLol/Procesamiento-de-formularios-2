@@ -1,13 +1,14 @@
 <?php
-include "alumno.php";
+include "auto.php";
 
 $id = $_GET['id'];
-$carnet = $_POST["carnet"];
-$nombre = $_POST["nombre"];
-$correo = $_POST["correo"];
-$edad = $_POST["edad"];
-$curso = $_POST["curso"];
-$foto = $_FILES["foto"];
+
+// $placa = $_POST["placa"];
+// $modelo = $_POST["modelo"];
+// $marca = $_POST["marca"];
+// $descripcion = $_POST["descripcion"];
+
+$marca = "Prueba";
 
 $db = new mysqli("localhost", "root", "", "bdprueba");
 
@@ -16,12 +17,11 @@ if ($db->connect_errno) {
     exit();
 }
 
-$stmt = "update alumnos set
-                nombre = '$nombre', 
-                carnet = '$carnet',
-                edad = '$edad',
-                correo = '$correo' ,
-                curso = '$curso'
+$stmt = "update autos set
+                placa = '$placa', 
+                modelo = '$modelo',
+                marca = '$marca',
+                descripcion = '$descripcion'
             where id = $id";
 
 $resultado = $db->query($stmt);
@@ -29,11 +29,11 @@ $resultado = $db->query($stmt);
 echo '<div class="my-3" style="padding-left: 15px">';
 
 if ($resultado)
-    echo "<p>Alumno actualizado correctamente.</p>";
+    echo "<p>Auto actualizado correctamente.</p>";
 else
     echo "<p>Error al actualizar los datos</p>";
 
-echo '    <a href="listar.php" class="btn btn-secondary">Regresar al listado.</a>';
+echo '    <a href="listar-autos.php" class="btn btn-secondary">Regresar al listado.</a>';
 echo '</div>';
 
 ?>
