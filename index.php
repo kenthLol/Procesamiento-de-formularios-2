@@ -80,16 +80,72 @@
                 <div class="card">
                     <div class="card-header" id="headingTwo">
                         <h2 class="mb-0">
-                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
-                                data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                Listado Alumnos
+                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseTwo"
+                                aria-expanded="true" aria-controls="collapseTwo">
+                                Formulario Autos
                             </button>
                         </h2>
                     </div>
-                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+
+                    <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo"
+                        data-parent="#accordionExample">
+                        <div class="card-body">
+                            <div class="container">
+                                <h1>Autos</h1>
+                                <p>Llene el formulario con los datos del auto:</p>
+
+                                <form action="registrar-auto.php" method="POST" ENCTYPE="multipart/form-data">
+                                    <!-- <div class="form-group col-12 col-md-6" style="display: none;">
+                                        <label for="id">Id:</label>
+                                        <input type="number" class="form-control" id="id" name="id"
+                                            placeholder="Ingrese su correo" required>
+                                    </div> -->
+                                    <div class="form-group col-12 col-md-6">
+                                        <label for="placa">Placa:</label>
+                                        <input type="text" class="form-control" id="placa" name="placa"
+                                            placeholder="Ingrese la marca" required>
+                                    </div>
+                                    <div class="form-group col-12 col-md-6">
+                                        <label for="modelo">Modelo:</label>
+                                        <input type="text" class="form-control" id="modelo" name="modelo"
+                                            maxlength="200" placeholder="Ingrese el modelo" required>
+                                    </div>
+                                    <div class="form-group col-12 col-md-6">
+                                        <label for="marca">Marca:</label>
+                                        <input type="text" class="form-control" id="marca" name="marca" maxlength="10"
+                                            placeholder="Ingrese la marca" required>
+                                    </div>
+                                    <div class="form-group col-12 col-md-6">
+                                        <label for="descripcion">Descripción:</label>
+                                        <textarea class="form-control" id="descripcion" rows="3" required></textarea>
+                                    </div>
+                                    <div style="padding-left: 15px;">
+                                        <button type="submit" class="btn btn-primary">Enviar</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingThree">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                Listados
+                            </button>
+                        </h2>
+                    </div>
+                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                        data-parent="#accordionExample">
                         <div class="card-body">
                             <div style="padding-left: 15px;">
-                                <a href="listar.php" class="btn btn-primary">Ver Listados</a>
+                                <a href="listar.php" class="btn btn-primary">Ver Listado de alumnos</a>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div style="padding-left: 15px;">
+                                <a href="listar-autos.php" class="btn btn-primary">Ver Listado de autos</a>
                             </div>
                         </div>
                     </div>
