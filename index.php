@@ -35,11 +35,11 @@
                                 <p>Llene el formulario con los datos del estudiante:</p>
 
                                 <form action="registrar.php" method="POST" ENCTYPE="multipart/form-data">
-                                    <div class="form-group col-12 col-md-6" style="display: none;">
+                                    <!-- <div class="form-group col-12 col-md-6" style="display: none;">
                                         <label for="id">Id:</label>
                                         <input type="number" class="form-control" id="id" name="id"
                                             placeholder="Ingrese su correo" required>
-                                    </div>
+                                    </div> -->
                                     <div class="form-group col-12 col-md-6">
                                         <label for="email">Correo electrónico:</label>
                                         <input type="email" class="form-control" id="email" name="email"

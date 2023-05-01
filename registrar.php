@@ -14,7 +14,6 @@
     <?php
     // Incluir la clase Alumno y procesar
     include "alumno.php";
-    include "procesar.php";
 
     // Obtener los datos del alumno desde el formulario
     $correo = $_POST['email'];
