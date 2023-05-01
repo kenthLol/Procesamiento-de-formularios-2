@@ -3,12 +3,10 @@ include "auto.php";
 
 $id = $_GET['id'];
 
-// $placa = $_POST["placa"];
-// $modelo = $_POST["modelo"];
-// $marca = $_POST["marca"];
-// $descripcion = $_POST["descripcion"];
-
-$marca = "Prueba";
+$placa = $_POST["placa"];
+$modelo = $_POST["modelo"];
+$marca = $_POST["marca"];
+$descripcion = $_POST["descripcion"];
 
 $db = new mysqli("localhost", "root", "", "bdprueba");
 
@@ -18,7 +16,7 @@ if ($db->connect_errno) {
 }
 
 $stmt = "update autos set
-                placa = '$placa', 
+                placa = '$placa',
                 modelo = '$modelo',
                 marca = '$marca',
                 descripcion = '$descripcion'
