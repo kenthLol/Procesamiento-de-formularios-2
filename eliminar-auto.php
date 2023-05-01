@@ -1,6 +1,4 @@
 <?php
-include "alumno.php";
-
 $id = $_GET["id"];
 
 $db = new mysqli("localhost", "root", "", "bdprueba");
@@ -10,7 +8,7 @@ if ($db->connect_errno) {
     exit();
 }
 
-$stmt = "delete from alumnos where id = '$id'";
+$stmt = "delete from autos where id = '$id'";
 
 $resultado = $db->query($stmt);
 
