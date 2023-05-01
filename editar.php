@@ -37,7 +37,7 @@
             $array_alumnos['carnet'],
             $array_alumnos['edad'],
             $array_alumnos['curso'],
-            null
+            $array_alumnos['foto']
         );
     }
 
@@ -83,15 +83,15 @@
                             <input type="text" class="form-control" id="curso" name="curso"
                                 value="<?php echo $alumno->curso; ?>" required pattern="[1-5]">
                         </div>
-                        <!-- <div class="form-group col-12 col-md-6">
+                        <div class="form-group col-12 col-md-6">
                             <label for="foto">Foto:</label>
                             <div class="photo-preview">
-                                <img id="photo-preview" src="<?php echo $alumno->foto['full_path']; ?>"
+                                <img id="photo-preview" src="<?php echo $alumno->foto; ?>"
                                     alt="Foto de <?php echo $alumno->nombre; ?>">
                             </div>
                             <input type="file" class="form-control-file" id="foto" name="foto"
                                 onchange="previewPhoto()">
-                        </div> -->
+                        </div>
                         <div style="padding-left: 15px;">
                             <button type="submit" class="btn btn-primary">Actualizar</button>
                         </div>
@@ -105,7 +105,7 @@
         <a href="index.php" class="btn btn-secondary">Regresar a la página principal</a>
     </div>
 
-    <!-- <script>
+    <script>
         function previewPhoto() {
             const photoInput = document.getElementById("foto");
             const photoPreview = document.getElementById("photo-preview");
@@ -116,7 +116,7 @@
             }
             reader.readAsDataURL(file);
         }
-    </script> -->
+    </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

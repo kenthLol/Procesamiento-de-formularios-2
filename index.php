@@ -65,10 +65,10 @@
                                         <input type="text" class="form-control" id="curso" name="curso" min="1" max="5"
                                             placeholder="Ingrese el curso actual" required pattern="[1-5]">
                                     </div>
-                                    <!-- <div class="form-group col-12 col-md-6">
+                                    <div class="form-group col-12 col-md-6">
                                         <label for="foto">Foto:</label>
                                         <input type="file" class="form-control-file" id="foto" name="foto" required>
-                                    </div> -->
+                                    </div>
                                     <div style="padding-left: 15px;">
                                         <button type="submit" class="btn btn-primary">Enviar</button>
                                     </div>

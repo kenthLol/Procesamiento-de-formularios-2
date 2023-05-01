@@ -43,7 +43,7 @@
                         $array_alumno['carnet'],
                         $array_alumno['edad'],
                         $array_alumno['curso'],
-                        null
+                        $array_alumno['foto'],
                     );
                 }
 
@@ -51,7 +51,7 @@
                     ?>
                     <div class="row border-top py-3">
                         <div class="col-4">
-                            <img src="<?php echo $alumno->foto['full_path']; ?>"
+                            <img src="<?php echo $alumno->foto; ?>"
                                 class="img-fluid img-thumbnail d-flex custom-img mx-auto my-2 custom-img"
                                 style="width: 120px; height: 120px" alt="Foto de <?php echo $alumno->nombre; ?>">
                         </div>

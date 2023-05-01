@@ -21,8 +21,8 @@
     $carnet = $_POST['carnet'];
     $edad = $_POST['edad'];
     $curso = $_POST['curso'];
-    // $foto = $_FILES['foto'];
-    
+    $foto = $_FILES['foto'];
+
     $db = new mysqli("localhost", "root", "", "bdprueba");
 
     if ($db->connect_errno) {
@@ -30,7 +30,25 @@
         exit();
     }
 
-    $stmt = "insert into alumnos(correo, nombre, carnet, edad, curso) value ('$correo', '$nombre', '$carnet', $edad, $curso)";
+    $fecha_actual = date('Y-m-d');
+
+    // Concatenar el nombre de usuario y la fecha actual, separados por un guion bajo
+    $nuevo_nombre_archivo = $nombre . '_' . $fecha_actual . '.jpg';
+    $foto['name'] = $nuevo_nombre_archivo;
+
+    if (isset($_FILES['foto']) && $_FILES['foto']['error'] == 0) {
+        $archivo_temporal = $_FILES['foto']['tmp_name'];
+        $ubicacion_archivo = 'images/' . $nuevo_nombre_archivo;
+        $foto['full_path'] = $ubicacion_archivo;
+        if (move_uploaded_file($archivo_temporal, $ubicacion_archivo)) {
+            $message = "El archivo se ha guardado correctamente en " . $ubicacion_archivo;
+            error_log($message, 0);
+        } else {
+            error_log("Error al cargar el archivo", 1);
+        }
+    }
+
+    $stmt = "insert into alumnos(correo, nombre, carnet, edad, curso, foto) value ('$correo', '$nombre', '$carnet', $edad, $curso, '$ubicacion_archivo')";
 
     $resultado = $db->query($stmt);
 
