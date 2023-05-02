@@ -34,6 +34,13 @@ if (isset($_FILES['foto']) && $_FILES['foto']['error'] == 0) {
     }
 }
 
+$stmt = "select foto from alumnos where id = $id";
+$resultado = $db->query($stmt);
+if ($resultado->num_rows > 0) {
+    $row = $resultado->fetch_assoc();
+    $foto_anterior = $row['foto'];
+}
+
 $stmt = "update alumnos set
                 nombre = '$nombre',
                 carnet = '$carnet',
