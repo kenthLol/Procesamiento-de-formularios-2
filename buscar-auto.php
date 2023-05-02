@@ -22,14 +22,18 @@
         <?php
         include "auto.php";
 
+        $placa = $_GET['placa'];
+
         $db = new mysqli("localhost", "root", "", "bdprueba");
+
+
 
         if ($db->connect_errno) {
           print "Error en la conexión " . $db->connect_errno;
           exit();
         }
 
-        $stmt = "select * from autos";
+        $stmt = "select * from autos where placa = '$placa'";
         $result = $db->query($stmt);
 
         $autos = array();

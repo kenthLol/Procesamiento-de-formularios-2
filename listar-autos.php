@@ -13,6 +13,14 @@
 <body>
     <div class="container ">
         <h2 class="my-3">Listado de Autos</h2>
+        <form id="search-form" method="POST">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Placa" id="placa-query" />
+                <div class="input-group-append">
+                    <button class="btn btn-primary" type="submit">Buscar auto</button>
+                </div>
+            </div>
+        </form>
         <div class="row">
             <div class="col-12  my-3">
                 <div class="row border-top py-2">
@@ -78,6 +86,18 @@
             <a href="index.php" class="btn btn-secondary">Regresar a la página principal</a>
         </div>
     </div>
+
+    <script>
+        const searchForm = document.getElementById('search-form');
+        const placaQueryInput = document.getElementById('placa-query');
+
+        searchForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+            const placaQuery = placaQueryInput.value;
+            searchForm.action = `buscar-auto.php?placa=${placaQuery}`;
+            searchForm.submit();
+        });
+    </script>
 
     <!-- Agregar los scripts de Bootstrap -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
